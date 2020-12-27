@@ -1,6 +1,15 @@
 import React, {Component} from 'react';
 import UserService from "../../service/UserService";
 import User from "../user/User";
+import './AllUsers-css.css'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    withRouter,
+    Link
+} from "react-router-dom";
+import FullUser from "../full-user/FullUser";
 
 class AllUsers extends Component {
 
@@ -15,14 +24,20 @@ class AllUsers extends Component {
 
     render() {
         let {users} = this.state;
+        let {match: {url}} = this.props;
+
         return (
             <div>
                 {
                     users.map(value => <User item={value} key={value.id}/>)
                 }
+                <div className={'all-users'}></div>
+                <Switch>
+                    <Route path={`${url}/:id`} render={() => {return <FullUser/>}}/>
+                </Switch>
             </div>
         );
     }
 }
 
-export default AllUsers;
+export default withRouter (AllUsers);

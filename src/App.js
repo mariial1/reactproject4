@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {
-  BrowserRouter as Router,
+    BrowserRouter as Router,
     Switch,
     Route,
     Link
@@ -16,35 +16,37 @@ class App extends Component {
         return (
 
             <Router>
-              <div>
-
                 <div>
-                  <Link to={('/users')}>users</Link>
-                </div>
-                <div>
-                  <Link to={('/posts')}>posts</Link>
-                </div>
-                <div>
-                  <Link to={('/comments')}>comments</Link>
-                </div>
 
-                <div className={'app-route'}>
+                    <div>
+                        <Link to={('/users')}>users</Link>
+                    </div>
+                    <div>
+                        <Link to={('/posts')}>posts</Link>
+                    </div>
+                    <div>
+                        <Link to={('/comments')}>comments</Link>
+                    </div>
 
-                    <Switch>
-                      <Route path={'/users'}>
-                        <AllUsers/>
-                      </Route>
-                      <Route path={'/posts'}>
-                          <AllPosts/>
-                      </Route>
-                      <Route path={'/comments'}>
-                          <AllComments/>
-                      </Route>
-                    </Switch>
+                    <div className={'app-route'}>
+
+                        <Switch>
+                            <Route path={'/users'} exact={true} render={(props) => {
+                                console.log(props);
+                                return <AllUsers/>;
+                            }}/>
+
+                            <Route path={'/posts'}>
+                                <AllPosts/>
+                            </Route>
+                            <Route path={'/comments'}>
+                                <AllComments/>
+                            </Route>
+                        </Switch>
+
+                    </div>
 
                 </div>
-
-              </div>
             </Router>
 
         );
