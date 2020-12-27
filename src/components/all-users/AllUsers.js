@@ -2,17 +2,11 @@ import React, {Component} from 'react';
 import UserService from "../../service/UserService";
 import User from "../user/User";
 import './AllUsers-css.css'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    withRouter,
-    Link
-} from "react-router-dom";
+
+import {Route, Switch, withRouter} from "react-router-dom";
 import FullUser from "../full-user/FullUser";
 
 class AllUsers extends Component {
-
     userService = new UserService();
 
     state = {users: []};
@@ -31,10 +25,15 @@ class AllUsers extends Component {
                 {
                     users.map(value => <User item={value} key={value.id}/>)
                 }
-                <div className={'all-users'}></div>
-                <Switch>
-                    <Route path={`${url}/:id`} render={() => {return <FullUser/>}}/>
-                </Switch>
+                <div className={'all-users'}>
+                    <Switch>
+                        <Route path={url + '/:id'} exact={true} render={(props) => {
+                            let {match: {params: {id}}} = props;
+                            return <FullUser userId={id} key={id}/>;
+                        }}/>
+                    </Switch>
+
+                </div>
             </div>
         );
     }

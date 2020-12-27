@@ -31,7 +31,7 @@ class App extends Component {
                     <div className={'app-route'}>
 
                         <Switch>
-                            <Route path={'/users'} exact={true} render={(props) => {
+                            <Route path={'/users'} render={(props) => {
                                 console.log(props);
                                 return <AllUsers/>;
                             }}/>
@@ -39,9 +39,12 @@ class App extends Component {
                             <Route path={'/posts'}>
                                 <AllPosts/>
                             </Route>
-                            <Route path={'/comments'}>
-                                <AllComments/>
-                            </Route>
+
+                            <Route path={'/comments'} render={(props) => {
+                                console.log(props);
+                                return <AllComments/>;
+                            }}/>
+
                         </Switch>
 
                     </div>
