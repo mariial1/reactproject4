@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    NavLink
 } from "react-router-dom";
 import AllUsers from "./components/all-users/AllUsers";
 import AllPosts from "./components/all-posts/AllPosts";
@@ -14,44 +13,31 @@ import AllComments from "./components/all-comments/AllComments";
 class App extends Component {
     render() {
         return (
-
-            <Router>
                 <div>
+                    <ul>
+                        <li>
+                            <NavLink to={'/users'}>users</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to={'/posts'}>posts</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to={'/comments'}>comments</NavLink>
+                        </li>
 
-                    <div>
-                        <Link to={('/users')}>users</Link>
-                    </div>
-                    <div>
-                        <Link to={('/posts')}>posts</Link>
-                    </div>
-                    <div>
-                        <Link to={('/comments')}>comments</Link>
-                    </div>
+                    </ul>
 
                     <div className={'app-route'}>
 
                         <Switch>
-                            <Route path={'/users'} render={(props) => {
-                                console.log(props);
-                                return <AllUsers/>;
-                            }}/>
-
-                            <Route path={'/posts'}>
-                                <AllPosts/>
-                            </Route>
-
-                            <Route path={'/comments'} render={(props) => {
-                                console.log(props);
-                                return <AllComments/>;
-                            }}/>
-
+                            <Route path={'/users'} component={AllUsers}/>
+                            <Route path={'/posts'} component={AllPosts}/>
+                            <Route path={'/comments'} component={AllComments}/>
                         </Switch>
 
                     </div>
 
                 </div>
-            </Router>
-
         );
     }
 }

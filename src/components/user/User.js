@@ -1,16 +1,13 @@
-import React, {Component} from 'react';
-import {Link, withRouter} from "react-router-dom";
+import React from 'react';
+import {NavLink, withRouter} from "react-router-dom";
 
-class User extends Component {
-    render() {
-        let {item, match: {url}} = this.props;
-        // console.log(this.props);
-        return (
-            <div>
-                {item.id} - {item.name} - <Link to={url + '/' + item.id}>details</Link>
-            </div>
-        );
-    }
+const User = ({item, match: {url}}) => {
+
+    return (
+        <div>
+            {item.id} - {item.name} - <NavLink to={url + '/' + item.id}>details</NavLink>
+        </div>
+    );
 }
 
-export default withRouter (User)
+export default withRouter(User)
