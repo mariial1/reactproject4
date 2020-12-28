@@ -3,7 +3,7 @@ import UserService from "../../service/UserService";
 import User from "../user/User";
 import './AllUsers-css.css'
 
-import {Route, Switch, withRouter} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import FullUser from "../full-user/FullUser";
 
 class AllUsers extends Component {
@@ -11,9 +11,11 @@ class AllUsers extends Component {
 
     state = {users: []};
 
-    async componentDidMount() {
-        let users = await this.userService.users();
-        this.setState({users});
+    componentDidMount() {
+        this.userService
+            .users()
+            .then(users =>
+                this.setState({users}))
     }
 
     render() {
@@ -26,17 +28,14 @@ class AllUsers extends Component {
                     users.map(value => <User item={value} key={value.id}/>)
                 }
                 <div className={'all-users'}>
-                    <Switch>
                         <Route path={url + '/:id'} exact={true} render={(props) => {
                             let {match: {params: {id}}} = props;
                             return <FullUser userId={id} key={id}/>;
                         }}/>
-                    </Switch>
-
                 </div>
             </div>
         );
     }
 }
 
-export default withRouter (AllUsers);
+export default withRouter(AllUsers);

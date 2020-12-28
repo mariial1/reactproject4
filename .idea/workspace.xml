@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e7107a6-fd75-4919-98f9-d19d24d40f6f" name="Default Changelist" comment="+++">
-      <change afterPath="$PROJECT_DIR$/src/components/all-comments/AllComments.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/comment/Comment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/full-comment/FullComment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/CommentService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/reactproject4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/reactproject4.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/all-comments/AllComments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/all-comments/AllComments.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/all-users/AllUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/all-users/AllUsers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/full-user/FullUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/full-user/FullUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/user/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/user/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/UserService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +87,7 @@
       <workItem from="1608891094760" duration="3405000" />
       <workItem from="1608980328579" duration="4958000" />
       <workItem from="1609062529181" duration="16976000" />
+      <workItem from="1609176374893" duration="1283000" />
     </task>
     <task id="LOCAL-00001" summary="+">
       <created>1608463276216</created>

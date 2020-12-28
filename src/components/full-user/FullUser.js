@@ -2,16 +2,17 @@ import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
 import UserService from "../../service/UserService";
 
-
 class FullUser extends Component {
 
     state = {user: null};
     userService = new UserService();
 
-    async componentDidMount() {
+    componentDidMount() {
         const {userId} = this.props;
-        const user = await this.userService.user(userId);
-        this.setState({user});
+        this.userService
+            .user(userId)
+            .then(user =>
+                this.setState({user}))
     }
 
     render() {
